@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>place_your_blog_title_here</title>
+    <link>place_your_blog_url_here</link>
+    <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
+    <description>place_your_blog_description_here</description>
+    <language>place_your_blog_language_here</language>
+    <pubDate>Fri, 10 Jul 2015 22:14:11 -0700</pubDate>
+    <lastBuildDate>Fri, 10 Jul 2015 22:14:11 -0700</lastBuildDate>
+
+    
+    <item>
+      <title>Aha, this is my first blog</title>
+      <link>place_your_blog_url_here/interests/2015/07/10/first-blog.html</link>
+      <pubDate>10 Jul 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/interests/2015/07/10/first-blog</guid>
+      <description>&lt;h3 id=&quot;section&quot;&gt;以下功能还需要修改一下下&lt;/h3&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;搜索功能&lt;/h3&gt;
+
+&lt;p&gt;搜索框目前只是摆设，请使用 &lt;a href=&quot;https://www.google.com/cse/&quot;&gt;Google Custom Search Engine&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/slashdotdash/jekyll-lunr-js-search&quot;&gt;jekyll-lunr-js-search&lt;/a&gt; 插件。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;修改邮箱&lt;/h3&gt;
+
+&lt;p&gt;通过 &lt;a href=&quot;http://www.safeemail.org/&quot;&gt;Stop Link Spam Bots&lt;/a&gt; 编辑了邮箱地址，希望能防 spam。&lt;/p&gt;
+
+&lt;h3 id=&quot;embedding-codepen&quot;&gt;Embedding Codepen&lt;/h3&gt;
+
+&lt;p&gt;如果需要插入 Codepen，只需将 embed code 中的 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 部分粘贴在正文中，而不必粘贴 &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 部分。更多关于插入 Codepen 的解释请查看 http://blog.codepen.io/documentation/features/how-do-i-embed-a-pen-on-another-site/ 。&lt;/p&gt;
+
+&lt;p&gt;如果完全不需要这个功能可以将 &lt;code&gt;/assets/js/script.js&lt;/code&gt; 中的相关代码删除。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;修改分享链接地址&lt;/h3&gt;
+
+&lt;p&gt;打开 &lt;code&gt;/_layouts/post.html&lt;/code&gt; 将分享链接中的 &lt;code&gt;place_your_url_here&lt;/code&gt; 提换成博客地址。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;修改许可协议&lt;/h3&gt;
+
+&lt;p&gt;在 &lt;code&gt;/_layouts/post.html&lt;/code&gt; 文件的分享链接部分声明博客内容所使用的许可协议，默认使用 &lt;a href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Attribution-NonCommercial-ShareAlike 3.0 Unported&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;rss&quot;&gt;设置 RSS&lt;/h3&gt;
+
+&lt;p&gt;请不要忘记编辑 &lt;code&gt;rss.xml&lt;/code&gt; 文件，语言可填 &lt;code&gt;zh-cn&lt;/code&gt; 或 &lt;code&gt;zh-tw&lt;/code&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

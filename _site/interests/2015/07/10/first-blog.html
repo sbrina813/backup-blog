@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>Aha, this is my first blog</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Front End</li>
+          <li id="js-label3" class="tags__li tags-btn">Back End</li>
+          <li id="js-label4" class="tags__li tags-btn">Design</li>
+          <li id="js-label5" class="tags__li tags-btn">Reading</li>
+          <li id="js-label6" class="tags__li tags-btn">Interests</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:sabrina.jiang813@gmail.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <a href="/index.html" id="mobile-avatar"></a>
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search..." disabled >
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2015-07-10 14:47:49 -0700">Aha, this is my first blog</h1>
+  <h3 id="section">以下功能还需要修改一下下</h3>
+
+<h3 id="section-1">搜索功能</h3>
+
+<p>搜索框目前只是摆设，请使用 <a href="https://www.google.com/cse/">Google Custom Search Engine</a> 或 <a href="https://github.com/slashdotdash/jekyll-lunr-js-search">jekyll-lunr-js-search</a> 插件。</p>
+
+<h3 id="section-2">修改邮箱</h3>
+
+<p>通过 <a href="http://www.safeemail.org/">Stop Link Spam Bots</a> 编辑了邮箱地址，希望能防 spam。</p>
+
+<h3 id="embedding-codepen">Embedding Codepen</h3>
+
+<p>如果需要插入 Codepen，只需将 embed code 中的 <code>&lt;p&gt;</code> 部分粘贴在正文中，而不必粘贴 <code>&lt;script&gt;</code> 部分。更多关于插入 Codepen 的解释请查看 http://blog.codepen.io/documentation/features/how-do-i-embed-a-pen-on-another-site/ 。</p>
+
+<p>如果完全不需要这个功能可以将 <code>/assets/js/script.js</code> 中的相关代码删除。</p>
+
+<h3 id="section-3">修改分享链接地址</h3>
+
+<p>打开 <code>/_layouts/post.html</code> 将分享链接中的 <code>place_your_url_here</code> 提换成博客地址。</p>
+
+<h3 id="section-4">修改许可协议</h3>
+
+<p>在 <code>/_layouts/post.html</code> 文件的分享链接部分声明博客内容所使用的许可协议，默认使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported</a>。</p>
+
+<h3 id="rss">设置 RSS</h3>
+
+<p>请不要忘记编辑 <code>rss.xml</code> 文件，语言可填 <code>zh-cn</code> 或 <code>zh-tw</code>。</p>
+
+</article> <!-- end #post__content -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sabrinajiang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
