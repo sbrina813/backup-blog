@@ -29,11 +29,13 @@ A callback function, also known as a higher-order function, is a function that i
 
 Consider this common use of a callback function in jQuery:
 
+
     //Note that the item in the click method's parameter is a function, not a variable.​
-    ​//The item is a callback function
+    //The item is a callback function
     $("#btn_1").click(function() {
       alert("Btn 1 Clicked");
     });
+
 
 As you see in the preceding example, we pass a function as a parameter to the click method. And the click method will call (or execute) the callback function we passed to it. This example illustrates a typical use of callback functions in JavaScript, and one widely used in jQuery.
 
