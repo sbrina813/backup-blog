@@ -19,18 +19,17 @@ Variables declared within a function are local variables and are only accessible
 - **Local Variables Have Priority Over Global Variables in Functions**
 If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope)
 
+		var name = "Paul";
 
-	var name = "Paul";
+		function users () {
+			// Here, the name variable is local and it takes precedence over the same name variable in the global scope​
+		var name = "Jack";
 
-	function users () {
-		// Here, the name variable is local and it takes precedence over the same name variable in the global scope​
-	var name = "Jack";
+		// The search for name starts right here inside the function before it attempts to look outside the function in the global scope​
+		console.log (name); 
+		}
 
-	// The search for name starts right here inside the function before it attempts to look outside the function in the global scope​
-	console.log (name); 
-	}
-
-	users (); // Jack
+		users (); // Jack
 
 **Global Variables**
 All variables declared outside a function are in the global scope. In the browser, which is what we are concerned with as front-end developers, the global context or scope is the window object (or the entire HTML document).
