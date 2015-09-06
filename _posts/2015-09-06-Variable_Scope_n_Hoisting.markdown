@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "JavaScript Variable Scope and Hoisting"
-date:   2015-09-04 
+date:   2015-09-06 
 categories: front_end
 ---
-##Variable Scope
 [Extract from javascriptissexy](http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/)
+
+##Variable Scope
 
 **Definition:** A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have access to the variable in that context.
 Variables have either a **local scope** or a **global scope**.
@@ -17,6 +18,7 @@ Variables declared within a function are local variables and are only accessible
 
 - **Local Variables Have Priority Over Global Variables in Functions**
 If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope):
+
 
 	var name = "Paul";
 
