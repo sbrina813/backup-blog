@@ -17,7 +17,7 @@ Variables declared within a function are local variables and are only accessible
 - **No Block-Level Scope**(variables scoped to surrounding curly brackets) example: variable in function without "var" is to be a global variable. 
 
 - **Local Variables Have Priority Over Global Variables in Functions**
-If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope):
+If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope)
 
 
 	var name = "Paul";
