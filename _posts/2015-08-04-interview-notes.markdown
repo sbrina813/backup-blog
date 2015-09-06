@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HTML5 interview material"
+title:  "HTML5 material"
 date:   2015-08-04 
 categories: front_end
 ---
