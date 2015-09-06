@@ -2,7 +2,7 @@
 layout: post
 title:  "Understand JavaScript Callback Functions and Use Them"
 date:   2015-09-04 
-categories: js
+categories: javascript
 ---
 
 ###(Learn JavaScript Higher-order Functions, aka Callback Functions)by [Richard Bovell][1] 

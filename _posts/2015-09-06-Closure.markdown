@@ -2,7 +2,7 @@
 layout: post
 title:  "JavaScript Closure"
 date:   2015-09-06 
-categories: js
+categories: javascript
 ---
 [Extract from javascriptissexy](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
 
