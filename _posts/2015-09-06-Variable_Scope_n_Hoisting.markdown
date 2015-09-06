@@ -2,7 +2,7 @@
 layout: post
 title:  "JavaScript Variable Scope and Hoisting"
 date:   2015-09-06 
-categories: front_end
+categories: js
 ---
 [Extract from javascriptissexy](http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/)
 
