@@ -6,7 +6,7 @@ categories: javascript
 ---
 
 [Extract from javascriptissexy](http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
----
+
 1. **Every JavaScript function has a prototype property** (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance. Firefox and most versions of Safari and Chrome have a _proto_ “pseudo” property, you should know that it exists and it is simply a way to access an object’s prototype property in some browsers
 
 2. The second concept with prototype in JavaScript is the **prototype attribute**.An object’s prototype attribute points to the object’s “parent”—the object it inherited its properties from. **To expound on this:** Every object inherits properties from some other object, and it is this other object that is the object’s prototype attribute or “parent”.
