@@ -5,6 +5,7 @@ date:   2015-09-07
 categories: javascript
 ---
 [Extrct form JavaScriptissexy](http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/)
+
 **Object Oriented Programming (OOP)** refers to using self-contained pieces of code to develop applications. We call these self-contained pieces of code objects, better known as Classes in most OOP programming languages and Functions in JavaScript.
 Building applications with objects allows us to adopt some valuable techniques, namely, **Inheritance** (objects can inherit features from other objects), **Polymorphism** (objects can share the same interface—how they are accessed and used—while their underlying implementation of the interface may differ), and **Encapsulation** (each object is responsible for specific tasks).
 In this article, we are concerned with only **Inheritance and Encapsulation** **since only these two concepts apply to OOP in JavaScript**, particularly because, in JavaScript, objects can encapsulate functionalities and inherit methods and properties from other objects.These two techniques: the best technique for creating objects with specialized functionalities (aka Encapsulation) and the best technique for reusing code (aka Inheritance).
