@@ -17,7 +17,7 @@ categories: javascript
 > this constructor property is simply a property (like any variable)
 > that holds or points to the constructor of the object.
 
-```javascript
+
     //The constructor in this example is Object ()
     var myObj = new Object ();
     // And if you later want to find the myObj constructor:
@@ -27,7 +27,7 @@ categories: javascript
     var userAccount = new Account (); 
     // Find the userAccount object's constructor
     console.log(userAccount.constructor); // Account()
-```
+
 **Prototype Attribute of Objects Created with new Object () or Object Literal**
 All objects created with object literals and with the Object constructor inherits from Object.prototype. Therefore, Object.prototype is the prototype attribute (or the prototype object) of all objects created with new Object () or with {}. Object.prototype itself does not inherit any methods or properties from any other object.
 
