@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>Bind, call and Apply in JavaScript</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/prettify/prettify.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Front End</li>
+          <li id="js-label3" class="tags__li tags-btn">Back End</li>
+          <li id="js-label4" class="tags__li tags-btn">JavaScript</li>
+          <li id="js-label5" class="tags__li tags-btn">Notes</li>
+          <li id="js-label6" class="tags__li tags-btn">Interests</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:sabrina.jiang813@gmail.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search...">
+          <ul id="results-container"></ul>
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/09/MVC-AngularJS.html"><span class="pl__circle"></span><span class="pl__title">SPA and MVC in AngularJS</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/this-in-javascript.html"><span class="pl__circle"></span><span class="pl__title">this in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Bind, call and Apply in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/OOP-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Object Oriented Programming (OOP)</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/JavaScript-Prototype.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Prototype</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Variable-Scope-n-Hoisting.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Variable Scope and Hoisting</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Closure.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Closure</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/04/callback.html"><span class="pl__circle"></span><span class="pl__title">Understand JavaScript Callback Functions and Use Them</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="front_end pl__all" href="/front_end/2015/08/04/interview-notes.html"><span class="pl__circle"></span><span class="pl__title">HTML5 material</span><span class="pl__date">Aug 2015</span></a>
+        
+          <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2015-09-08 00:00:00 -0700">Bind, call and Apply in JavaScript</h1>
+  September 08, 2015
+  <p><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/">Extrct form JavaScriptissexy</a></p>
+
+<p>JavaScript’s Bind Allows Us to Set the this Value on Methods 
+<strong>bind ()</strong> allows us to easily set which specific object will be bound to this when a function or method is invoked.</p>
+
+<pre><code>//            &lt;button&gt;Get Random Person&lt;/button&gt;​
+​//        &lt;input type="text"&gt;​
+​
+​
+​var user = {
+    data        :[
+        {name:"T. Woods", age:37},
+        {name:"P. Mickelson", age:43}
+    ],
+    clickHandler:function (event) {
+        var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1​
+​
+        // This line is adding a random person from the data array to the text field​
+        $ ("input").val (this.data[randomNum].name + " " + this.data[randomNum].age);
+    }
+​
+}
+​
+​// Assign an eventHandler to the button's click event​
+$ ("button").click (user.clickHandler); When you click the button, you get an error because this in the clickHandler () method is bound to the button HTML element, since that is the object that the clickHandler method is executed on. To fix this problem, we could bind 
+
+$ ("button").click (user.clickHandler.bind (user)); use this
+
+  // This data variable is a global variable​
+            var data = [
+                {name:"Samantha", age:12},
+                {name:"Alexis", age:14}
+            ]
+​
+            var user = {
+                // local data variable​
+                data    :[
+                    {name:"T. Woods", age:37},
+                    {name:"P. Mickelson", age:43}
+                ],
+                showData:function (event) {
+                    var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1​
+​
+                    console.log (this.data[randomNum].name + " " + this.data[randomNum].age);
+                }
+​
+            }
+​
+            // Assign the showData method of the user object to a variable​
+            var showDataVar = user.showData;
+​
+            showDataVar (); // Samantha 12 (from the global data array, not from the local data array)​ we can fix this problem by specifically setting the “this” value with the bind method:
+
+            // Bind the showData method to the user object​
+            var showDataVar = user.showData.bind (user);
+​
+            // Now the we get the value from the user object because the this keyword is bound to the user object​
+            showDataVar (); // P. Mickelson 43​
+</code></pre>
+
+<p><strong>Bind () Allows us to Borrow Methods</strong></p>
+
+<pre><code>       // Here we have a cars object that does not have a method to print its data to the console​
+            var cars = {
+                data:[
+                    {name:"Honda Accord", age:14},
+                    {name:"Tesla Model S", age:2}
+                ]
+​
+            }
+​
+            // We can borrow the showData () method from the user object we defined in the last example.​
+            // Here we bind the user.showData method to the cars object we just created.​
+            cars.showData = user.showData.bind (cars);
+            cars.showData (); // Honda Accord 14​ it is best to borrow a method using either the Apply or Call method.
+</code></pre>
+
+<p><strong>JavaScript’s Bind Allows Us to Curry a Function</strong> </p>
+
+<p><strong>Function Currying</strong>, also known as partial function application, is the use of a function (that accept one or more arguments) that returns a new function with some of the arguments already set. The function that is returned has access to the stored arguments and variables of the outer function. 
+Let’s use the bind () method for currying.</p>
+
+<pre><code>function greet (gender, age, name) {
+    // if a male, use Mr., else use Ms.​
+    var salutation = gender === "male" ? "Mr. " : "Ms. ";
+
+    if (age &gt; 25) {
+        return "Hello, " + salutation + name + ".";
+    }
+    else {
+        return "Hey, " + name + ".";
+    }
+}
+// So we are passing null because we are not using the "this" keyword in our greet function.​
+var greetAnAdultMale = greet.bind (null, "male", 45);
+
+greetAnAdultMale ("John Hartlove"); // "Hello, Mr. John Hartlove."​
+
+var greetAYoungster = greet.bind (null, "", 16);
+greetAYoungster ("Alex"); // "Hey, Alex."​
+greetAYoungster ("Emma Waterloo"); // "Hey, Emma Waterloo."​
+</code></pre>
+
+<p>So, with the bind () method, we can explicitly set the this value for invoking methods on objects, we can borrow and copy methods, and assign methods to variable to be executed as functions.</p>
+
+<h4 id="javascripts-apply-and-call-methods">JavaScript’s Apply and Call Methods</h4>
+<p>The <strong>Apply and Call</strong> methods are two of the most often used Function methods in JavaScript, and for good reason: they allow us to borrow functions and set the this value in function invocation. In addition, the apply function in particular allows us to execute a function with an array of parameters, such that each parameter is passed to the function individually when the function executes—great for variadic functions; a variadic function takes varying number of arguments, not a set number of arguments as most functions do.</p>
+
+<p><strong>Set the this value with Apply or Call</strong></p>
+
+<pre><code>// global variable for demonstration​
+var avgScore = "global avgScore";
+​
+//global function​
+function avg (arrayOfScores) {
+    // Add all the scores and return the total​
+    var sumOfScores = arrayOfScores.reduce (function (prev, cur, index, array) {
+        return prev + cur;
+    });
+​
+    // The "this" keyword here will be bound to the global object, unless we set the "this" with Call or Apply​
+    this.avgScore = sumOfScores / arrayOfScores.length;
+}
+​
+var gameController = {
+    scores  :[20, 34, 55, 46, 77],
+    avgScore:null​
+}
+​
+// If we execute the avg function thus, "this" inside the function is bound to the global window object:​
+avg (gameController.scores);
+// Proof that the avgScore was set on the global window object​
+console.log (window.avgScore); // 46.4​
+console.log (gameController.avgScore); // null​
+​
+// reset the global avgScore​
+avgScore = "global avgScore";
+​
+// To set the "this" value explicitly, so that "this" is bound to the gameController,​
+// We use the call () method:​
+avg.call (gameController, gameController.scores);
+​
+console.log (window.avgScore); //global avgScore​
+console.log (gameController.avgScore); // 46.4​ The apply and call methods are almost identical when setting the this value except that you pass the function parameters to apply () as an array, while you have to list the parameters individually to pass them to the call () method. More on this follows. Meanwhile, the apply () method also has another feature that the call () method doesn’t have, as we will soon see.
+</code></pre>
+
+<p><strong>Use Call or Apply To Set this in Callback Functions</strong></p>
+
+<pre><code>// Define an object with some properties and a method​
+// We will later pass the method as a callback function to another function​
+var clientData = {
+id: 094545,
+fullName: "Not Set",
+// setUserName is a method on the clientData object​
+setUserName: function (firstName, lastName)  {
+// this refers to the fullName property in this object​
+this.fullName = firstName + " " + lastName;
+}
+}
+
+function getUserInput (firstName, lastName, callback, callbackObj) {
+// The use of the Apply method below will set the "this" value to callbackObj​
+callback.apply (callbackObj, [firstName, lastName]);
+} The Apply method sets the this value to callbackObj. This allows us to execute the callback function with the this value set explicitly, so the parameters passed to the callback function will be set on the clientData object:
+
+// The clientData object will be used by the Apply method to set the "this" value​
+getUserInput ("Barack", "Obama", clientData.setUserName, clientData);
+// the fullName property on the clientData was correctly set​
+console.log (clientData.fullName); // Barack Obama​
+</code></pre>
+
+<p><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/">Examples</a> of <strong>Borrowing Functions with Apply and Call (A Must Know)</strong></p>
+
+</article> <!-- end #post__content -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sabrinajiang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assects/js/jekyll-search.js"></script>   
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+ 	 $(function(){
+   	 $("pre").addClass("prettyprint linenums");
+	prettyPrint();
+  	});
+</script>
+  </body>
+</html>

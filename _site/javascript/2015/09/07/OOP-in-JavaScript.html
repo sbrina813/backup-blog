@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>Object Oriented Programming (OOP)</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/prettify/prettify.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Front End</li>
+          <li id="js-label3" class="tags__li tags-btn">Back End</li>
+          <li id="js-label4" class="tags__li tags-btn">JavaScript</li>
+          <li id="js-label5" class="tags__li tags-btn">Notes</li>
+          <li id="js-label6" class="tags__li tags-btn">Interests</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:sabrina.jiang813@gmail.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search...">
+          <ul id="results-container"></ul>
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/09/MVC-AngularJS.html"><span class="pl__circle"></span><span class="pl__title">SPA and MVC in AngularJS</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/this-in-javascript.html"><span class="pl__circle"></span><span class="pl__title">this in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Bind, call and Apply in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/OOP-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Object Oriented Programming (OOP)</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/JavaScript-Prototype.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Prototype</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Variable-Scope-n-Hoisting.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Variable Scope and Hoisting</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Closure.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Closure</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/04/callback.html"><span class="pl__circle"></span><span class="pl__title">Understand JavaScript Callback Functions and Use Them</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="front_end pl__all" href="/front_end/2015/08/04/interview-notes.html"><span class="pl__circle"></span><span class="pl__title">HTML5 material</span><span class="pl__date">Aug 2015</span></a>
+        
+          <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2015-09-07 00:00:00 -0700">Object Oriented Programming (OOP)</h1>
+  September 07, 2015
+  <p><a href="http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/">Extrct form JavaScriptissexy</a></p>
+
+<p><strong>Object Oriented Programming (OOP)</strong> refers to using self-contained pieces of code to develop applications. We call these self-contained pieces of code objects, better known as Classes in most OOP programming languages and Functions in JavaScript.
+Building applications with objects allows us to adopt some valuable techniques, namely, <strong>Inheritance</strong> (objects can inherit features from other objects), <strong>Polymorphism</strong> (objects can share the same interface—how they are accessed and used—while their underlying implementation of the interface may differ), and <strong>Encapsulation</strong> (each object is responsible for specific tasks).
+In this article, we are concerned with only <strong>Inheritance and Encapsulation</strong> <strong>since only these two concepts apply to OOP in JavaScript</strong>, particularly because, in JavaScript, objects can encapsulate functionalities and inherit methods and properties from other objects.These two techniques: the best technique for creating objects with specialized functionalities (aka Encapsulation) and the best technique for reusing code (aka Inheritance).</p>
+
+<h3 id="encapsulation-and-inheritance-overview">Encapsulation and Inheritance Overview</h3>
+<p><strong>Objects</strong> can be thought of as the main actors in an application, or simply the main “things” or building blocks that do all the work. As you know by now, objects are everywhere in JavaScript since every component in JavaScript is an Object, including Functions, Strings, and Numbers. We normally use object literals or constructor functions to create objects.</p>
+
+<p><strong>Encapsulation</strong> refers to enclosing all the functionalities of an object within that object so that the object’s internal workings (its methods and properties) are hidden from the rest of the application. This allows us to abstract or localize specific set of functionalities on objects.</p>
+
+<p><strong>Inheritance</strong> refers to an object being able to inherit methods and properties from a parent object (a Class in other OOP languages, or a Function in JavaScript).</p>
+
+<p><strong>Both of these concepts, encapsulation and inheritance, are important because they allow us to build applications with reusable code, scalable architecture, and abstracted functionalities. Maintainable, scalable, efficient.</strong></p>
+
+<h3 id="oop-in-javascript">OOP in JavaScript</h3>
+<p>The two important principles with OOP in JavaScript are <strong>Object Creation patterns (Encapsulation) and Code Reuse patterns (Inheritance)</strong>. When building applications, you create many objects, and there exist many ways for creating these objects: you can use the ubiquitous object literal pattern,</p>
+
+<pre><code>var myObj = {name: "Richard", profession: "Developer"}; 
+</code></pre>
+
+<p>You can use the prototype pattern, adding each method and property directly on the object’s prototype.</p>
+
+<pre><code>function Employee () {}
+​
+Employee.prototype.firstName = "Abhijit";
+Employee.prototype.lastName = "Patel";
+Employee.prototype.startDate = new Date();
+Employee.prototype.signedNDA = true;
+Employee.prototype.fullName = function () {
+console.log (this.firstName + " " + this.lastName); 
+};
+​
+​var abhijit = new Employee () //​
+console.log(abhijit.fullName()); // Abhijit Patel​
+console.log(abhijit.signedNDA); // true
+</code></pre>
+
+<p>You can also use the constructor pattern, a constructor function (Classes in other languages, but Functions in JavaScript).</p>
+
+<pre><code>function Employee (name, profession) {
+​this.name = name;
+​this.profession = profession;
+} // Employee () is the constructor function because we use the &lt;em&gt;new&lt;/em&gt; keyword below to invoke it.​
+​
+​var richard = new Employee (“Richard”, “Developer”) // richard is a new object we create from the Employee () constructor function.​
+​
+console.log(richard.name); //richard​
+console.log(richard.profession); // Developer
+</code></pre>
+
+<p>These two universal principles—<strong>creating objects</strong> (especially from constructor Functions) and <strong>allowing objects to inherit properties and methods</strong>—are the main focus of this article and, indeed, <strong>the main concepts with OOP in JavaScript.</strong> We first discuss the object creation pattern.</p>
+
+<h3 id="encapsulation-in-javascript">Encapsulation in JavaScript</h3>
+<p>#####(The Best Object Creation Pattern: Combination Constructor/Prototype Pattern)</p>
+
+<p>As discussed above, one of the main principles <strong>with OOP is encapsulation</strong>: put all the inner workings of an object inside that object.</p>
+
+<p><strong>Why Encapsulation?</strong>
+whenever you want to create objects with similar functionalities (to use the same methods and properties), you encapsulate the main functionalities in a Function and you use that Function’s constructor to create the objects. This is the <code>essence</code> of encapsulation.
+<strong>Implementation of Combination Constructor/Prototype Pattern</strong></p>
+
+<pre><code>function User (theName, theEmail) {
+    this.name = theName;
+    this.email = theEmail;
+    this.quizScores = [];
+    this.currentScore = 0;
+}
+​
+User.prototype = {
+    constructor: User, //have to set manually,since constructor property changes 
+    saveScore:function (theScoreToAdd)  {
+        this.quizScores.push(theScoreToAdd)
+    },
+    showNameAndScores:function ()  {
+        var scores = this.quizScores.length &gt; 0 ? this.quizScores.join(",") : "No Scores Yet";
+        return this.name + " Scores: " + scores;
+    },
+    changeEmail:function (newEmail)  {
+        this.email = newEmail;
+        return "New Email Saved: " + this.email;
+    }
+}
+
+// A User ​
+firstUser = new User("Richard", "Richard@examnple.com"); 
+firstUser.changeEmail("RichardB@examnple.com");
+firstUser.saveScore(15);
+firstUser.saveScore(10); 
+​
+firstUser.showNameAndScores(); //Richard Scores: 15,10​
+​
+​// Another User​
+secondUser = new User("Peter", "Peter@examnple.com");
+secondUser.saveScore(18);
+secondUser.showNameAndScores(); //Peter Scores: 18
+</code></pre>
+
+<p><em>The one <strong>disadvantage</strong> of overwriting the prototype is that the constructor property no longer points to the prototype, so we have to set it manually. Hence this line:</em>
+With this pattern, you can use the standard operators and methods on the instances, including the instanceOf operator, the for-in loop (even hasOwnProperty), and the constructor property.</p>
+
+<h3 id="inheritance-in-javascript">Inheritance in JavaScript</h3>
+<p>#####(The Best Pattern: Parasitic Combination Inheritance)</p>
+
+<p><strong>Object.create method</strong></p>
+
+<pre><code>Object.create = function (o) {
+​//It creates a temporary constructor F()​
+        function F() {
+        }
+​//And set the prototype of the this constructor to the parametric (passed-in) o object​
+​//so that the F() constructor now inherits all the properties and methods of o​
+        F.prototype = o;
+​
+​//Then it returns a new, empty object (an instance of F())​
+​//Note that this instance of F inherits from the passed-in (parametric object) o object. ​
+​//Or you can say it copied all of the o object's properties and methods​
+        return new F();
+    }
+</code></pre>
+
+<p>The crux of the matter with this Object.create method is that you pass into it an object that you want to inherit from, and it returns a new object that inherits from the object you passed into it. For example:</p>
+
+<pre><code>// We have a simple cars object​
+​var cars = {
+    type:"sedan",
+    wheels:4​
+};
+​
+​// We want to inherit from the cars object, so we do:​
+​var toyota = Object.create (cars); // now toyota inherits the properties from cars​
+console.log(toyota.type); // sedan
+</code></pre>
+
+<p>The next function we will use for inheritance is the <strong>inheritPrototype</strong> function. <strong>This function succinctly implements the parasitic combination inheritance for us.</strong> We pass in the parent object (or Super Class) and the child object (or Sub Class), and the function does the parasitic combination inheritance: makes the child object inherits from the parent object.</p>
+
+<pre><code> function inheritPrototype(childObject, parentObject) {
+    // As discussed above, we use the Crockford’s method to copy the properties and methods from the parentObject onto the childObject​
+​// So the copyOfParent object now has everything the parentObject has ​
+    var copyOfParent = Object.create(parentObject.prototype);
+​
+    //Then we set the constructor of this new object to point to the childObject.​
+​// Why do we manually set the copyOfParent constructor here, see the explanation immediately following this code block.​
+    copyOfParent.constructor = childObject;
+​
+    // Then we set the childObject prototype to copyOfParent, so that the childObject can in turn inherit everything from copyOfParent (from parentObject)​
+   childObject.prototype = copyOfParent;
+}
+</code></pre>
+
+<h6 id="why-did-we-manually-set-the-copyofparentconstructor">Why did we manually set the copyOfParent.constructor?</h6>
+<p>We explicitly set the copyOfParent.constructor property to point to the childObject constructor because in the preceding step, var copyOfParent = Object.create(parentObject.prototype), this is what we actually did:</p>
+
+<pre><code>// We made a new object and overwrote its prototype with the parentObject prototype:​
+​function F() {
+        }
+F.prototype = parentObject.prototype;
+​// Then it was this new F object we assigned to copyOfParent.​
+​// All of this was done inside the Object.create () method.
+</code></pre>
+
+<p>So, this new F object, which we assigned to copyOfParent, doesn’t have a constructor property anymore because we overwrote its entire prototype. <strong>Whenever you overwrite an object’s prototype (object.prototype = someVal), you also overwrite the object’s constructor property.</strong>
+To make sure we have the correct value for copyOfParent constructor, we set it manually with this: <code>copyOfParent.constructor = childObject;</code></p>
+
+<blockquote>
+  <p>Essentially, we are copying all the properties and methods from the
+parentObject to the childObject, but we are <strong>using the copyOfParent as
+an intermediary</strong> for the copy. And because the childObject prototype
+was overwritten during the copy, we manually set the copyOfParent
+constructor to the childObject. Then we set the childObject prototype
+to the copyOfParent so that the childObject inherits from the
+parentObject.</p>
+</blockquote>
+
+</article> <!-- end #post__content -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sabrinajiang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assects/js/jekyll-search.js"></script>   
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+ 	 $(function(){
+   	 $("pre").addClass("prettyprint linenums");
+	prettyPrint();
+  	});
+</script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "*this* in JavaScript"
+title:  "this in JavaScript"
 date:   2015-09-08 
 categories: javascript
 ---

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>JavaScript Closure</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/prettify/prettify.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Front End</li>
+          <li id="js-label3" class="tags__li tags-btn">Back End</li>
+          <li id="js-label4" class="tags__li tags-btn">JavaScript</li>
+          <li id="js-label5" class="tags__li tags-btn">Notes</li>
+          <li id="js-label6" class="tags__li tags-btn">Interests</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:sabrina.jiang813@gmail.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search...">
+          <ul id="results-container"></ul>
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/09/MVC-AngularJS.html"><span class="pl__circle"></span><span class="pl__title">SPA and MVC in AngularJS</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/this-in-javascript.html"><span class="pl__circle"></span><span class="pl__title">this in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Bind, call and Apply in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/OOP-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Object Oriented Programming (OOP)</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/JavaScript-Prototype.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Prototype</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Variable-Scope-n-Hoisting.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Variable Scope and Hoisting</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Closure.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Closure</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/04/callback.html"><span class="pl__circle"></span><span class="pl__title">Understand JavaScript Callback Functions and Use Them</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="front_end pl__all" href="/front_end/2015/08/04/interview-notes.html"><span class="pl__circle"></span><span class="pl__title">HTML5 material</span><span class="pl__date">Aug 2015</span></a>
+        
+          <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2015-09-06 00:00:00 -0700">JavaScript Closure</h1>
+  September 06, 2015
+  <p><a href="http://javascriptissexy.com/understand-javascript-closures-with-ease/">Extract from javascriptissexy</a></p>
+
+<p><strong>What is a closure?</strong>
+A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables.</p>
+
+<p>The inner function has access not only to the outer function’s <code>variables</code>, but also to the outer function’s <code>parameters</code>. Note that the inner function cannot call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.</p>
+
+<pre><code>function showName (firstName, lastName) {
+var nameIntro = "Your name is ";
+    // this inner function has access to the outer function's variables, including the parameter
+function makeFullName () {       
+return nameIntro + firstName + " " + lastName;    
+}
+return makeFullName ();
+}
+showName ("Michael", "Jackson"); // Your name is Michael Jackson
+</code></pre>
+
+<p>Closures are used extensively in Node.js; they are workhorses in Node.js’ asynchronous, non-blocking architecture. Closures are also frequently used in jQuery and just about every piece of JavaScript code you read.</p>
+
+<pre><code>$(function() {
+
+var selections = []; 
+$(".niners").click(function() { // this closure has access to the selections variable​
+selections.push (this.prop("name")); // update the selections variable in the outer function's scope​
+});
+
+});
+</code></pre>
+
+<ol>
+  <li>
+    <p><strong>Closures’ Rules and Side Effects</strong>
+<em>Closures have access to the outer function’s variable even after the outer function returns:</em>
+When functions in JavaScript execute, they use the same scope chain that was in effect when they were created. This means that even after the outer function has returned, the inner function still has access to the outer function’s variables. Therefore, <code>you can call the inner function later</code> in your program. This example demonstrates:</p>
+
+    <pre><code> function celebrityName (firstName) {
+     var nameIntro = "This celebrity is ";
+     // this inner function has access to the outer function's variables, including the parameter​
+    function lastName (theLastName) {
+         return nameIntro + firstName + " " + theLastName;
+     }
+     return lastName;
+ }
+    
+ var mjName = celebrityName ("Michael"); // At this juncture, the celebrityName outer function has returned.
+    
+ // The closure (lastName) is called here after the outer function has returned above
+ // Yet, the closure still has access to the outer function's variables and parameter
+ mjName ("Jackson"); // This celebrity is Michael Jackson    
+</code></pre>
+  </li>
+  <li>
+    <p><strong>Closures store references to the outer function’s variables;</strong> they do not store the actual value.  Closures get more interesting when the value of the outer function’s variable changes before the closure is called. And this powerful feature can be harnessed in creative ways, such as this private variables example first demonstrated by Douglas Crockford: </p>
+
+    <pre><code> function celebrityID () {
+     var celebrityID = 999;
+     // We are returning an object with some inner functions
+     // All the inner functions have access to the outer function's variables
+     return {
+         getID: function ()  {
+             // This inner function will return the UPDATED celebrityID variable
+             // It will return the current value of celebrityID, even after the changeTheID function changes it
+           return celebrityID;
+         },
+         setID: function (theNewID)  {
+             // This inner function will change the outer function's variable anytime​
+             celebrityID = theNewID;
+         }
+     }
+    
+ }
+    
+ var mjID = celebrityID (); // At this juncture, the celebrityID outer function has returned.
+ mjID.getID(); // 999
+ mjID.setID(567); // Changes the outer function's variable
+ mjID.getID(); // 567: It returns the updated celebrityId variable
+</code></pre>
+  </li>
+  <li>
+    <p><strong>Closures Gone Awry</strong>
+Because closures have access to the updated values of the outer function’s variables, they can also lead to bugs when the outer function’s variable changes with a for loop. Thus:</p>
+
+    <pre><code> // This example is explained in detail below (just after this code box).
+ function celebrityIDCreator (theCelebrities) {
+     var i;
+     var uniqueID = 100;
+     for (i = 0; i &lt; theCelebrities.length; i++) {
+       theCelebrities[i]["id"] = function ()  {
+         return uniqueID + i;
+       }
+     }
+        
+     return theCelebrities;
+ }
+    
+ var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
+    
+ var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+    
+ var stalloneID = createIdForActionCelebs [0];console.log(stalloneID.id()); // 103
+</code></pre>
+  </li>
+</ol>
+
+<p>In the preceding example, by the time the anonymous functions are called, the value of i is 3 (the length of the array and then it increments). The number 3 was added to the uniqueID to create 103 for ALL the celebritiesID. So every position in the returned array get id = 103, instead of the intended 100, 101, 102.</p>
+
+<p>The reason this happened was because, as we have discussed in the previous example, the closure (the anonymous function in this example) has access to the outer function’s variables by reference, not by value. So just as the previous example showed that we can access the updated variable with the closure, this example similarly accessed the i variable when it was changed, since the outer function runs the entire for loop and returns the last value of i, which is 103</p>
+
+<p>To fix this side effect (bug) in closures, you can use an <strong>Immediately Invoked Function Expression (IIFE)</strong>, such as the following:</p>
+
+<pre><code>function celebrityIDCreator (theCelebrities) {
+    var i;
+    var uniqueID = 100;
+    for (i = 0; i &lt; theCelebrities.length; i++) {
+        theCelebrities[i]["id"] = function (j)  { // the j parametric variable is the i passed in on invocation of this IIFE​
+            return function () {
+                return uniqueID + j; // each iteration of the for loop passes the current value of i into this IIFE and it saves the correct value to the array​
+            } () // BY adding () at the end of this function, we are executing it immediately and returning just the value of uniqueID + j, instead of returning a function.
+        } (i); // immediately invoke the function passing the i variable as a parameter
+    }
+    return theCelebrities;
+}
+var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
+var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+var stalloneID = createIdForActionCelebs [0];
+console.log(stalloneID.id); // 100
+var cruiseID = createIdForActionCelebs [1];
+console.log(cruiseID.id); // 101
+</code></pre>
+
+
+</article> <!-- end #post__content -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sabrinajiang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assects/js/jekyll-search.js"></script>   
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+ 	 $(function(){
+   	 $("pre").addClass("prettyprint linenums");
+	prettyPrint();
+  	});
+</script>
+  </body>
+</html>

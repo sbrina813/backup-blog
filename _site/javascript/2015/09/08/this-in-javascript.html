@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>404 Not Found Error</title>
+    <title>this in JavaScript</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -67,8 +67,48 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title">404 Not Found Error</h1>
+  <h1 id="post__title" data-identifier="2015-09-08 00:00:00 -0700">this in JavaScript</h1>
+  September 08, 2015
+  <p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/">Extrct form JavaScriptissexy</a></p>
+
+<p>Note that when we use <code>strict mode</code>, this holds the value of undefined in global functions and in anonymous functions that are not bound to any object.</p>
+
+<blockquote>
+  <p>Even though it appears <em>this</em> refers to the object where it is
+defined, it is not until an object invokes the this Function that
+<em>this</em> is actually assigned a value. And the value it is assigned is based exclusively on the object that invokes the this Function. <em>this</em>
+has the value of the invoking object in most circumstances. However,
+there are a few scenarios where <em>this</em> does not have the value of the
+invoking object.</p>
+</blockquote>
+
+<p><strong>The use of <em>this</em> in the global scope</strong>
+when we use <em>this</em> in a global function, it refers to (and has the value of) the global window object (not in strict mode though, as noted earlier) that is the main container of the entire JavaScript application or web page.</p>
+
+<p><strong>When <em>this</em> is most misunderstood and becomes tricky</strong>
+The this keyword is most misunderstood when we borrow a method that uses <em>this</em>, when we assign a method that uses this to a variable, when a function that uses <em>this</em> is <code>passed as a callback function</code>, and when this is used inside a closure—an inner function.</p>
+
+<p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/"><strong>4 Examples need to digest for future use</strong></a></p>
+
+<p><strong>Always remember that <em>this</em> is assigned the value of the object that invoked the this Function.</strong></p>
+
 </article> <!-- end #post__content -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sabrinajiang';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
       </div> <!-- end #pjax -->
 
       <div id="post__toc-trigger">

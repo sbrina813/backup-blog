@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>Aha, this is my first blog</title>
+    <title>SPA and MVC in AngularJS</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -67,35 +67,78 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="2015-07-10 14:47:49 -0700">Aha, this is my first blog</h1>
-  July 10, 2015
-  <h3 id="section">以下功能还需要修改一下下</h3>
+  <h1 id="post__title" data-identifier="2015-09-09 00:00:00 -0700">SPA and MVC in AngularJS</h1>
+  September 09, 2015
+  <p>Extract from the book of Pro AngularJS—Adam Freeman</p>
 
-<h3 id="section-1">搜索功能</h3>
+<h4 id="round-trip-app-vs-single-page-app">Round-Trip App vs Single Page App</h4>
+<p><strong>Round-trip App</strong>:The browser requests an initial HTML document from the server. User interactions-such as clicking a link or submitting a form-led the browser to request and receive a completely new HTML document. In this kind of application, the browser is essentially a rending engine for HTML content, and all of the applicaation logic and data resides on the server. The browser makes a series of stateless HTTP requests that the server handles by generating HTML documents danamically.</p>
 
-<p>搜索框目前只是摆设，请使用 <a href="https://www.google.com/cse/">Google Custom Search Engine</a> 或 <a href="https://github.com/slashdotdash/jekyll-lunr-js-search">jekyll-lunr-js-search</a> 插件。</p>
+<p><strong>Serious drawbacks to round-trip apps</strong> : They make the user wait while the next HTML document is requested and roaded, they require a large server-side infrastructure to process all of the requests and manage all of the application state, and they require a lot of bandwidth because each HTML document has to be self-contained(a lot of same content-like header, footer- being included in each response from the server)</p>
 
-<h3 id="section-2">修改邮箱</h3>
+<p><strong>Single page application(SPA)</strong>: An initial HTML document is sent to the browser, but user interactions lead to Ajax requests for small fragments of HTML or data inserted into the existing set of elements being displayed to the user. The initial HTML document is never be reloaded or replaced, and the user can continue to interact with the existing HTML while the Ajax requests are being performed asychronously, even if that just means seeing a “data loading” message.
+Ther is gradual tendency for current web app projects to move toward the single page application model, because the benefits of using the MVC pattern really start to manifest themselves in larger and more complex projects.</p>
 
-<p>通过 <a href="http://www.safeemail.org/">Stop Link Spam Bots</a> 编辑了邮箱地址，希望能防 spam。</p>
+<h4 id="understanding-the-mvc-pattern">Understanding the MVC Pattern</h4>
+<p>The key to applying the MVC pattern is to implement the key premise of a <em>separation of concerns</em>, in which the data model in the application is decoupled from the business and presentation logic. In the client-side web development, <strong>this means separating the data, the logic that oprates on that data, and the HTML elements used to display the data.</strong> The result is a client-side application that is easier to develop,maintain and test.</p>
 
-<h3 id="embedding-codepen">Embedding Codepen</h3>
+<p><strong>Models</strong>—the M in MVC,contains the data that users work with. There are two broad types of model. <strong>view models</strong>, which represent just data passed from the controller to the view, and <strong>domian models</strong>, which contain the data in a business domain, along with the operations, transformation, and rules for creating, storing and manipulating that data, collectively referred to as the model logic.</p>
 
-<p>如果需要插入 Codepen，只需将 embed code 中的 <code>&lt;p&gt;</code> 部分粘贴在正文中，而不必粘贴 <code>&lt;script&gt;</code> 部分。更多关于插入 Codepen 的解释请查看 http://blog.codepen.io/documentation/features/how-do-i-embed-a-pen-on-another-site/ 。</p>
+<blockquote>
+  <p><strong>A model should:</strong></p>
 
-<p>如果完全不需要这个功能可以将 <code>/assets/js/script.js</code> 中的相关代码删除。</p>
+  <ul>
+    <li>Contain domain data</li>
+    <li>Contain the logic for creating,managing and modifying the domain data</li>
+    <li>Provide a clean API that exposes the model data and operations on it</li>
+  </ul>
+</blockquote>
 
-<h3 id="section-3">修改分享链接地址</h3>
+<blockquote>
+  <p><strong>should not:</strong></p>
 
-<p>打开 <code>/_layouts/post.html</code> 将分享链接中的 <code>place_your_url_here</code> 提换成博客地址。</p>
+  <ul>
+    <li>Expose details of how the model data is obtained or managed( in other words, details of the data storage mechanism or the remote web
+service should not be exposed to controllers and views)</li>
+    <li>Contain logic that transforms the model based on user interaction( because this is the controller’s job)</li>
+    <li>Contain logic for displaying to the user( this is the view’s job)</li>
+  </ul>
+</blockquote>
 
-<h3 id="section-4">修改许可协议</h3>
+<p><strong>Controllers</strong> are the connective tissue in an AngularJS web application, acting as conduits between the data model and views. Controllers add business logic(known as behavior) to scopes, which are subsets of the model.</p>
 
-<p>在 <code>/_layouts/post.html</code> 文件的分享链接部分声明博客内容所使用的许可协议，默认使用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported</a>。</p>
+<blockquote>
+  <p><strong>A controller should:</strong></p>
 
-<h3 id="rss">设置 RSS</h3>
+  <ul>
+    <li>Contain the logic required to initialize the scope</li>
+    <li>Contain the logic/behaviors required by the view to present data from the scope</li>
+    <li>Contain the logic/behaviors required to update the scope based on the user interaction</li>
+  </ul>
 
-<p>请不要忘记编辑 <code>rss.xml</code> 文件，语言可填 <code>zh-cn</code> 或 <code>zh-tw</code>。</p>
+  <p><strong>Should not:</strong></p>
+
+  <ul>
+    <li>Contain logic that manipulates the DOM (that is the job of the view)</li>
+    <li>Contain logic that manages the persistence of data (that is the job of the model)</li>
+    <li>Manipulate data outside of the scope</li>
+  </ul>
+</blockquote>
+
+<p><strong>Views</strong> are defined using HTML elements that are enhanced and that generate HTML by the use of data bindings and directives. It is the AngularJS directives that make views so flexible, and they transform HTML elements into the foundation for dynamic web apps.</p>
+
+<blockquote>
+  <p><strong>Virws should:</strong></p>
+
+  <ul>
+    <li>
+      <p>Contain the logic and markup required to present data to the user<br />
+<strong>Should not:</strong></p>
+    </li>
+    <li>Contain complex logic （this is better placed in a controller)</li>
+    <li>Contain logic that creates, stores or manipulates the domain model</li>
+  </ul>
+</blockquote>
 
 </article> <!-- end #post__content -->
 

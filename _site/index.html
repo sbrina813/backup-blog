@@ -9,6 +9,7 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/prettify/prettify.css">
   </head>
   <body>
     <aside id="sidebar">
@@ -32,12 +33,30 @@
 
       <div id="posts-list">
         <form action="" id="search-form">
-          <a href="/index.html" id="mobile-avatar"></a>
           <!-- NOTE: input field is disabled by default -->
-          <input id="search-input" type="text" placeholder="Search..." disabled >
+          <input id="search-input" type="text" placeholder="Search...">
+          <ul id="results-container"></ul>
         </form>
 
         <nav id="pl__container">
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/09/MVC-AngularJS.html"><span class="pl__circle"></span><span class="pl__title">SPA and MVC in AngularJS</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/this-in-javascript.html"><span class="pl__circle"></span><span class="pl__title">this in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Bind, call and Apply in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/OOP-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Object Oriented Programming (OOP)</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/JavaScript-Prototype.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Prototype</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Variable-Scope-n-Hoisting.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Variable Scope and Hoisting</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Closure.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Closure</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/04/callback.html"><span class="pl__circle"></span><span class="pl__title">Understand JavaScript Callback Functions and Use Them</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="front_end pl__all" href="/front_end/2015/08/04/interview-notes.html"><span class="pl__circle"></span><span class="pl__title">HTML5 material</span><span class="pl__date">Aug 2015</span></a>
         
           <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
         
@@ -49,6 +68,7 @@
       <div id="pjax">
         <article id="post__content">
   <h1 id="post__title">Welcome</h1>
+  <p>This is a place where I accumulate web development technologies. --- Sabrina </p>
 </article> <!-- end #post__content -->
       </div> <!-- end #pjax -->
 
@@ -61,14 +81,17 @@
     </div> <!-- end #post -->
 
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
-
     <script src="/assets/js/jquery-2.0.3.min.js"></script>
     <script src="/assets/js/jquery.pjax.js"></script>
     <script src="/assets/js/nprogress.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script>$(function() {
-  $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
-});</script>
+    <script src="/assects/js/jekyll-search.js"></script>   
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+ 	 $(function(){
+   	 $("pre").addClass("prettyprint linenums");
+	prettyPrint();
+  	});
+</script>
   </body>
 </html>
