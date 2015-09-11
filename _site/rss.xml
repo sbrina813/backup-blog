@@ -1,21 +1,90 @@
-<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title></title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/prettify/prettify.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Front End</li>
+          <li id="js-label3" class="tags__li tags-btn">Back End</li>
+          <li id="js-label4" class="tags__li tags-btn">JavaScript</li>
+          <li id="js-label5" class="tags__li tags-btn">Notes</li>
+          <li id="js-label6" class="tags__li tags-btn">Interests</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:sabrina.jiang813@gmail.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search...">
+          <ul id="results-container"></ul>
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/09/MVC-AngularJS.html"><span class="pl__circle"></span><span class="pl__title">SPA and MVC in AngularJS</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/this-in-javascript.html"><span class="pl__circle"></span><span class="pl__title">this in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Bind, call and Apply in JavaScript</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/OOP-in-JavaScript.html"><span class="pl__circle"></span><span class="pl__title">Object Oriented Programming (OOP)</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/07/JavaScript-Prototype.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Prototype</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Variable-Scope-n-Hoisting.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Variable Scope and Hoisting</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/06/Closure.html"><span class="pl__circle"></span><span class="pl__title">JavaScript Closure</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="javascript pl__all" href="/javascript/2015/09/04/callback.html"><span class="pl__circle"></span><span class="pl__title">Understand JavaScript Callback Functions and Use Them</span><span class="pl__date">Sep 2015</span></a>
+        
+          <a class="front_end pl__all" href="/front_end/2015/08/04/interview-notes.html"><span class="pl__circle"></span><span class="pl__title">HTML5 material</span><span class="pl__date">Aug 2015</span></a>
+        
+          <a class="interests pl__all" href="/interests/2015/07/10/first-blog.html"><span class="pl__circle"></span><span class="pl__title">Aha, this is my first blog</span><span class="pl__date">Jul 2015</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>place_your_blog_title_here</title>
-    <link>place_your_blog_url_here</link>
-    <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
-    <description>place_your_blog_description_here</description>
-    <language>place_your_blog_language_here</language>
-    <pubDate>Fri, 11 Sep 2015 16:34:07 -0700</pubDate>
-    <lastBuildDate>Fri, 11 Sep 2015 16:34:07 -0700</lastBuildDate>
+    <title>Sabrina Jiang's Blog</title>
+    <link>http://sbrina813.github.io/</link>
+    <atom:link href="http://sbrina813.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Just learn whatever it takes to make it work. I use this blog to accumulate.
+</description>
+    <language>en-us</language>
+    <pubDate>Fri, 11 Sep 2015 16:38:47 -0700</pubDate>
+    <lastBuildDate>Fri, 11 Sep 2015 16:38:47 -0700</lastBuildDate>
 
     
     <item>
       <title>SPA and MVC in AngularJS</title>
-      <link>place_your_blog_url_here/javascript/2015/09/09/MVC-AngularJS.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/09/MVC-AngularJS.html</link>
       <pubDate>09 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/09/MVC-AngularJS</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/09/MVC-AngularJS</guid>
       <description>&lt;p&gt;Extract from the book of Pro AngularJS—Adam Freeman&lt;/p&gt;
 
 &lt;h4 id=&quot;round-trip-app-vs-single-page-app&quot;&gt;Round-Trip App vs Single Page App&lt;/h4&gt;
@@ -91,10 +160,10 @@ service should not be exposed to controllers and views)&lt;/li&gt;
     
     <item>
       <title>this in JavaScript</title>
-      <link>place_your_blog_url_here/javascript/2015/09/08/this-in-javascript.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/08/this-in-javascript.html</link>
       <pubDate>08 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/08/this-in-javascript</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/08/this-in-javascript</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/&quot;&gt;Extrct form JavaScriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that when we use &lt;code&gt;strict mode&lt;/code&gt;, this holds the value of undefined in global functions and in anonymous functions that are not bound to any object.&lt;/p&gt;
@@ -122,10 +191,10 @@ The this keyword is most misunderstood when we borrow a method that uses &lt;em&
     
     <item>
       <title>Bind, call and Apply in JavaScript</title>
-      <link>place_your_blog_url_here/javascript/2015/09/08/Bind-apply-call-in-JavaScript.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/08/Bind-apply-call-in-JavaScript.html</link>
       <pubDate>08 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/08/Bind-apply-call-in-JavaScript</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/08/Bind-apply-call-in-JavaScript</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/&quot;&gt;Extrct form JavaScriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;JavaScript’s Bind Allows Us to Set the this Value on Methods 
@@ -303,10 +372,10 @@ console.log (clientData.fullName); // Barack Obama​
     
     <item>
       <title>Object Oriented Programming (OOP)</title>
-      <link>place_your_blog_url_here/javascript/2015/09/07/OOP-in-JavaScript.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/07/OOP-in-JavaScript.html</link>
       <pubDate>07 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/07/OOP-in-JavaScript</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/07/OOP-in-JavaScript</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/&quot;&gt;Extrct form JavaScriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Object Oriented Programming (OOP)&lt;/strong&gt; refers to using self-contained pieces of code to develop applications. We call these self-contained pieces of code objects, better known as Classes in most OOP programming languages and Functions in JavaScript.
@@ -485,10 +554,10 @@ parentObject.&lt;/p&gt;
     
     <item>
       <title>JavaScript Prototype</title>
-      <link>place_your_blog_url_here/javascript/2015/09/07/JavaScript-Prototype.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/07/JavaScript-Prototype.html</link>
       <pubDate>07 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/07/JavaScript-Prototype</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/07/JavaScript-Prototype</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/&quot;&gt;Extract from javascriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
@@ -649,10 +718,10 @@ console.log (famousPerson.toString()); // [object Object]
     
     <item>
       <title>JavaScript Variable Scope and Hoisting</title>
-      <link>place_your_blog_url_here/javascript/2015/09/06/Variable-Scope-n-Hoisting.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/06/Variable-Scope-n-Hoisting.html</link>
       <pubDate>06 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/06/Variable-Scope-n-Hoisting</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/06/Variable-Scope-n-Hoisting</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/&quot;&gt;Extract from javascriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;variable-scope&quot;&gt;Variable Scope&lt;/h2&gt;
@@ -822,10 +891,10 @@ console.log (&quot;Rich&quot;);
     
     <item>
       <title>JavaScript Closure</title>
-      <link>place_your_blog_url_here/javascript/2015/09/06/Closure.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/06/Closure.html</link>
       <pubDate>06 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/06/Closure</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/06/Closure</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://javascriptissexy.com/understand-javascript-closures-with-ease/&quot;&gt;Extract from javascriptissexy&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What is a closure?&lt;/strong&gt;
@@ -962,10 +1031,10 @@ console.log(cruiseID.id); // 101
     
     <item>
       <title>Understand JavaScript Callback Functions and Use Them</title>
-      <link>place_your_blog_url_here/javascript/2015/09/04/callback.html</link>
+      <link>http://sbrina813.github.io//javascript/2015/09/04/callback.html</link>
       <pubDate>04 Sep 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/javascript/2015/09/04/callback</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//javascript/2015/09/04/callback</guid>
       <description>&lt;h3 id=&quot;learn-javascript-higher-order-functions-aka-callback-functionsby-richard-bovell1&quot;&gt;(Learn JavaScript Higher-order Functions, aka Callback Functions)by &lt;a href=&quot;http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/&quot;&gt;Richard Bovell&lt;/a&gt;&lt;/h3&gt;
 
 &lt;hr /&gt;
@@ -1305,10 +1374,10 @@ Hello, Mr. Bill Gates
     
     <item>
       <title>HTML5 material</title>
-      <link>place_your_blog_url_here/front_end/2015/08/04/interview-notes.html</link>
+      <link>http://sbrina813.github.io//front_end/2015/08/04/interview-notes.html</link>
       <pubDate>04 Aug 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/front_end/2015/08/04/interview-notes</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//front_end/2015/08/04/interview-notes</guid>
       <description>&lt;p&gt;New features in HTML5
 HTML 5 New Doctype and Charset
 HTML 5 New Structure &amp;lt;section&amp;gt;，&amp;lt;article&amp;gt;，&amp;lt;nav&amp;gt;，&amp;lt;header&amp;gt;，&amp;lt;footer&amp;gt;，&amp;lt;aside&amp;gt;&lt;/p&gt;
@@ -1359,10 +1428,10 @@ u
     
     <item>
       <title>Aha, this is my first blog</title>
-      <link>place_your_blog_url_here/interests/2015/07/10/first-blog.html</link>
+      <link>http://sbrina813.github.io//interests/2015/07/10/first-blog.html</link>
       <pubDate>10 Jul 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/interests/2015/07/10/first-blog</guid>
+      <author>Sabrina Jiang</author>
+      <guid>http://sbrina813.github.io//interests/2015/07/10/first-blog</guid>
       <description>&lt;h3 id=&quot;section&quot;&gt;以下功能还需要修改一下下&lt;/h3&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;搜索功能&lt;/h3&gt;
@@ -1395,3 +1464,28 @@ u
     
   </channel>
 </rss>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assects/js/jekyll-search.js"></script>   
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+ 	 $(function(){
+   	 $("pre").addClass("prettyprint linenums");
+	prettyPrint();
+  	});
+</script>
+  </body>
+</html>
