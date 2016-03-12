@@ -1,0 +1,481 @@
+---
+layout: post
+title:  "Node interview basic questions"
+date:   2016-03-11
+categories: front_end
+---
+####JQueryUI
+
+jQueryUI can custom features you need，then download related js and css files.
+**Spinner:**
+![Alt text](./spinner.png)
+
+```
+  // instantiate a basic spinner control
+  $("#spinCtrl1").spinner();
+  $("#spinCtrl1").spinner("value", 1);
+
+  // spinner control with settings for min, max, step, 
+  // and formatting
+  $("#spinCtrl2").spinner({
+      min: 0,
+      max: 500,
+      step: 10, //鼠标点击增加或减少
+      page: 10，//用键盘pageUp/Down key
+      spin: function(evt, elem) {
+          if (evt.metaKey)
+           return false; //如果按住command key，再鼠标点击spin上下就不行
+      }
+  });
+  $("#spinCtrl2").spinner("value", 50);
+   
+```
+**Slider:**
+![Alt text](./slider.png)
+```
+$("#sliderCtrl1").slider({
+    animate: "fast"
+});
+$("#sliderCtrl2").slider({
+    value: 75,
+    min: 0,
+    max: 200,
+    step: 25,
+    slide: function(evt, elem) {
+        $("#amt").text(elem.value);
+    },
+    start: function(evt, elem) {
+        $("#amt").addClass("heavytext")
+    },
+    stop: function(evt, elem) {
+        $("#amt").removeClass("heavytext")
+    }
+});            
+$("#amt").text($("#sliderCtrl2").slider("value"));
+
+$("#sliderCtrl3").slider({
+    range: true,
+    min: 500,
+    max: 5000,
+    values: [1500, 3000],
+    slide: function(evt, elem) {
+        $("#sl3Val1").text(elem.values[0]);
+        $("#sl3Val2").text(elem.values[1]);
+    }
+});
+$("#sl3Val1").text($("#sliderCtrl3").slider("values", 0));
+$("#sl3Val2").text($("#sliderCtrl3").slider("values", 1));
+```
+**Selectmenu:**
+![Alt text](./selectmenu.png)
+![Alt text](./selectmenu-1.png)
+```javascript
+$("#selmenu1").selectmenu();
+
+$("#selmenu2").selectmenu();
+
+$("#selmenu3").selectmenu({
+    icons: { button: "ui-icon-lightbulb" }
+}).selectmenu("menuWidget")
+  .addClass("fixedHeight"); //下拉菜单一定高度，可以scroll
+  
+//HTML  
+<h3>Selectmenu with groups</h3>
+<div>
+   <label>Select a country:</label>
+   <select id="selmenu2">
+       <optgroup label="North America">
+           <option>Canada</option>
+           <option>Mexico</option>
+           <option>United States</option>
+       </optgroup>
+       <optgroup label="South America">
+           <option>Brazil</option>
+           <option>Argentina</option>
+           <option>Chile</option>
+       </optgroup>
+   </select>
+</div>
+```
+**Accordion**
+![Alt text](./Accordion.png)
+```
+ $("document").ready(function() {
+   // build a basic accordion control
+   $("#accordionCtrl").accordion();
+   
+   // allow all sections to collapse. By default, the Accordion always keeps at least
+   // one section open. You can override this behavior to enable all the sections to be closed
+   // also set an option to toggle the headers by a hover event
+   $("#accordionCtrl").accordion( {
+       collapsible: true,
+       event: "click mouseover"
+   }); //mouseover 代替 click 就可打开新的，关闭旧的
+   
+   // customize the icons
+   $("#accordionCtrl").accordion({
+       icons: {
+           header: "ui-icon-circle-triangle-e",
+           activeHeader: "ui-icon-circle-triangle-s"
+       }
+   });
+});
+```
+**Progress Bar: .progressbar**
+![Alt text](./progressBar.png)
+```
+    // instantiate a basic spinner control
+    $("#progress1").progressbar({
+        value: 40 
+    });
+//HTML
+ <div id="progress2" class="progressbar"><div id="prog2Label" class="prog2Label">Downloading...</div></div>
+ 
+    $("#progress2").progressbar({
+        value: 70,  //start value
+        complete: function(evt, elem) {
+            alert("Download complete!");
+        } //complete callback function
+    });
+    $("#btnIncr").click(function() {
+        var elem =  $("#progress2");
+        var val = elem.progressbar( "value" ) || 0;
+        elem.progressbar( "value", val + 10 );
+        return false;
+    });
+
+    $("#progress3").progressbar({
+        value: false //会有滚动效果,下面还加了绿色的背景，默认是黄色的
+    });
+
+
+.prog2Label {
+    position: absolute;
+    left: 45%;
+    top:5px
+}
+progress3 .ui-progressbar-value {
+    background-color: green;
+}
+```
+**Autocomplete:**
+![Alt text](./autocomplete.png)
+
+```javascript
+ <script type="text/javascript">
+        var programLangs = [
+            "ActionScript",
+            "AppleScript",
+            "ASP.NET",
+            "BASIC",
+            "C",
+            "C++",
+            "C#",
+            "COBOL",
+            "Dart",
+            "Erlang",
+            "Fortran",
+            "Go",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby"
+        ];
+   $("document").ready(function() {
+         $("#auto1").autocomplete({
+             source: getData, //getData function
+             autoFocus: true
+         });
+     });
+    //source:programLangs，的话，每当输入一个字母时，只要是含有该字母，都会显示在下面，换成 source: getData,后，type in a letter a,只有第一个字母是a的才显示     
+     function getData(req, callback) {
+         var result = [];
+         for (var i=0; i < programLangs.length; i++) {
+             if (programLangs[i].substring(0,1) == req.term.toUpperCase()) 
+                 result.push(programLangs[i]);
+         }//if the first letter that typed in(req.term) matches with the first letter of programLang
+         callback(result);
+     }
+ </script>
+
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+```
+
+**Dialog:**
+![Alt text](./dialog.png)
+![Alt text](./dialog2.png)
+![Alt text](./dialog3.png)
+
+```
+        $("#dialog1").dialog();
+        $("#openDlg1").click(function() {
+            $("#dialog1").dialog("open");
+        });
+
+        { autoOpen: false }
+        
+        
+        $("#dialog2").dialog({
+            autoOpen: false,
+            buttons: [
+                {
+                    text: "Cancel",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                {
+                    text: "OK",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            ]
+        });
+        $("#openDlg2").click(function() {
+            $("#dialog2").dialog("open");
+        });
+
+        $("#dialog3").dialog({
+            autoOpen: false,
+            closeOnEscape: false,
+            draggable: false, //不能拉动，上面两个可以
+            modal: true,
+            buttons: [
+                {
+                    text: "OK",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            ]
+        });
+        $("#openDlg3").click(function() {
+            $("#dialog3").dialog("open");
+        });
+
+
+<div id="dialog1" title="Dialog Title">
+    <p>This is the dialog content</p>
+</div>
+<div id="dialog2" title="Dialog with buttons">
+    <p>This dialog has button controls</p>
+</div>
+<div id="dialog3" title="Dialog with options">
+    <p>This dialog has some different options set</p>
+</div>
+```
+
+**Datepicker:** //datepicker还有很多功能此处未包含
+![Alt text](./Datepicker.png)
+
+``` 
+ $("#datepick1").datepicker();   
+     firstDay: 1,
+
+       showButtonPanel: true,
+       currentText: "Today",
+       closeText: "Close", //button,button内容
+       
+       constrainInput: true, //type in的内容constrains to date numbers
+       
+       defaultDate: 3,
+       
+       minDate: 0, //不能选择过去的日期
+       maxDate: "+3M",//最多选择此后的3个月。 eg,+3D ,+4Y
+
+       changeMonth: true,
+       changeYear: true,
+
+       numberOfMonths: 1,
+       
+       beforeShowDay: onBeforeShowDay
+//使得周末无法选
+   function onBeforeShowDay(theDate) {
+       // Day 0 is Sunday, 6 is Saturday
+       if (theDate.getDay() == 0 || theDate.getDay() == 6) 
+           return [false, "", "Weekends disabled"]; //hover weekends: there will be a msg of Weekends disabled
+       
+       return [true, ""];
+   }
+```
+
+**Tabs:**
+
+```javascript
+   $("#tabsCtrl").tabs({
+       heightStyle : "auto",
+       collapsible : true
+   });
+   
+   $("#addTab").click(function(evt) {
+       newTab = $("<li><a href='#tab5'>Tab 5</li>");
+       $("#tabsCtrl").find(".ui-tabs-nav").append(newTab);
+       $("#tabsCtrl").append("<div id='tab5'><p>This is the newly added tab</p></div>"); //新增两个tab, 也都是tab5
+       $("#tabsCtrl").tabs("refresh"); //这样才能显示新tab
+       evt.preventDefault();
+   });
+
+<button id="addTab">Add New Tab</button>
+<div id="tabsCtrl">
+  <ul>
+      <li><a href="#tab1">Tab 1</a></li>
+      <li><a href="#tab2">Tab 2</a></li>
+<!--
+   <li><a href="tabs/tab3.html">Tab 3</a></li> 
+   //这个会导航到连接，而不是tab，This tab was loaded in via AJAX，tab3.html文件在tabs文件夹下
+    <li><a href="tabs/tab4.html">Tab 4</a></li>
+-->
+      <li><a href="#tab3">Tab 3</a></li>
+      <li><a href="#tab4">Tab 4</a></li>
+  </ul>
+  
+```
+
+**Resize:**
+drag 拉大拉小
+```
+ // basic resizing feature
+ $("#theDiv").resizable();
+ 
+ // preserve the aspect ratio
+ $("#theDiv").resizable({ aspectRatio: true });
+ 
+ // minimum mouse move distance
+ $("#theDiv").resizable({ distance: 15 }); //需要move more than 15px distance, resize才启动
+
+ // snap to a resize grid 格子状
+ $("#theDiv").resizable({ grid: [ 20, 10 ] });
+ 
+ // constrain the maximum and minimum size
+ $("#theDiv").resizable({
+     minHeight: 150,
+     minWidth: 150,
+     maxHeight: 500,
+     maxWidth: 800
+     
+     start: function(evt, ui) {
+         ui.element.css("background-color", "yellow");
+     },
+     stop: function(evt, ui) {
+         ui.element.css("background-color", "");
+         $("#theDiv h2").text("Resize Me");
+     },
+     resize: function(evt, ui) {
+         $("#theDiv h2").text(
+             Math.round(ui.element.width())
+             + ", " + 
+             Math.round(ui.element.height()));
+     }
+ });
+```
+
+**Drag and Drop:**
+
+```
+        $("#theDiv").draggable();
+
+        $("#theDiv").draggable({
+            axis: "x",
+            handle: "h2",
+            revert: true,
+        });
+
+<div id="theDrop" class="target">
+    <h2>Drop Target</h2>
+</div>
+
+        $("#theDrop").droppable({
+            accept: "#theDiv",
+            hoverClass: "highlight",
+            tolerance: "fit",
+            //还有pointer/intersect
+            
+            activate: function (evt, ui) {
+                $(this).find("h2").css("background-color", "cornsilk");
+            },//开始拖动target时，drop target的背景色变换
+            deactivate: function (evt, ui) {
+                $(this).find("h2").css("background-color", "");
+            },
+            drop: function(evt, ui) {
+                $(this).find("h2").text("Dropped");
+                ui.draggable.find("h2").text("Dropped");
+            }
+        });
+```
+
+Color Animation:
+![Alt text](./colorani.png)
+![Alt text](./colorani2.png)
+<p>The properties that can have their colors animated are: <code>backgroundColor</code>, <code>borderBottomColor</code>, <code>borderLeftColor</code>, <code>borderRightColor</code>, <code>borderTopColor</code>, <code>color</code>, <code>columnRuleColor</code>, <code>outlineColor</code>, <code>textDecorationColor</code>, <code>textEmphasisColor</code></p>
+```
+$("#anim1").click(function(evt) {
+    $("#theDiv").animate({
+        backgroundColor: "red",
+        color: "white",
+        borderColor: "blue"
+    }, 800);
+});
+
+$("#anim2").click(function(evt) {
+    $("#theDiv").animate({
+        backgroundColor: "#b3c8d0",
+        color: "#000",
+        borderColor: "#a9a9a9"
+    }, 800);
+});
+```
+
+
+Show/Hide:
+各种效果：blind,  bounce,  explode,  highlight, puff .....
+```
+$("#show1").click(function(evt) {
+    $("#theDiv").show("blind", 500);
+});
+$("#hide1").click(function(evt) {
+    $("#theDiv").hide("blind", 500);
+});
+$("#show2").click(function(evt) {
+    $("#theDiv").show("bounce", 500);
+});
+$("#hide2").click(function(evt) {
+    $("#theDiv").hide("bounce", 500);
+});
+$("#show3").click(function(evt) {
+    $("#theDiv").show("explode", 500);
+});
+$("#hide3").click(function(evt) {
+    $("#theDiv").hide("explode", 500);
+});
+$("#show4").click(function(evt) {
+    $("#theDiv").show("highlight", 500);
+});
+$("#hide4").click(function(evt) {
+    $("#theDiv").hide("highlight", 500);
+});
+$("#show5").click(function(evt) {
+    $("#theDiv").show("puff", 500);
+});
+$("#hide5").click(function(evt) {
+    $("#theDiv").hide("puff", 500);
+});
+```
+
+
+
+
+
+
+
+
+

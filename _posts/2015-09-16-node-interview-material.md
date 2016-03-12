@@ -5,6 +5,7 @@ date:   2015-09-16
 categories: javascript
 ---
 [extract from CareerGuru](http://career.guru99.com/top-25-interview-questions-on-node-js/)
+
 **1)      What is node.js?**
 
 Node.js is a Server side scripting which is used to build scalable programs. Its multiple advantages over other server side languages, the prominent being non-blocking I/O.
