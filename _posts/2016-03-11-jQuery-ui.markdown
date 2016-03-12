@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Node interview basic questions"
+title:  "jQuery UI"
 date:   2016-03-11
 categories: front_end
 ---
