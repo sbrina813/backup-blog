@@ -30,99 +30,107 @@ jQueryUI can custom features you need，then download related js and css files.
   $("#spinCtrl2").spinner("value", 50);
    
 ```
+
 - **Slider:**
 ![Alt text](./slider.png)
-```
-$("#sliderCtrl1").slider({
-    animate: "fast"
-});
-$("#sliderCtrl2").slider({
-    value: 75,
-    min: 0,
-    max: 200,
-    step: 25,
-    slide: function(evt, elem) {
-        $("#amt").text(elem.value);
-    },
-    start: function(evt, elem) {
-        $("#amt").addClass("heavytext")
-    },
-    stop: function(evt, elem) {
-        $("#amt").removeClass("heavytext")
-    }
-});            
-$("#amt").text($("#sliderCtrl2").slider("value"));
 
-$("#sliderCtrl3").slider({
-    range: true,
-    min: 500,
-    max: 5000,
-    values: [1500, 3000],
-    slide: function(evt, elem) {
-        $("#sl3Val1").text(elem.values[0]);
-        $("#sl3Val2").text(elem.values[1]);
-    }
-});
-$("#sl3Val1").text($("#sliderCtrl3").slider("values", 0));
-$("#sl3Val2").text($("#sliderCtrl3").slider("values", 1));
 ```
+    $("#sliderCtrl1").slider({
+        animate: "fast"
+    });
+    $("#sliderCtrl2").slider({
+        value: 75,
+        min: 0,
+        max: 200,
+        step: 25,
+        slide: function(evt, elem) {
+            $("#amt").text(elem.value);
+        },
+        start: function(evt, elem) {
+            $("#amt").addClass("heavytext")
+        },
+        stop: function(evt, elem) {
+            $("#amt").removeClass("heavytext")
+        }
+    });            
+    $("#amt").text($("#sliderCtrl2").slider("value"));
+
+    $("#sliderCtrl3").slider({
+        range: true,
+        min: 500,
+        max: 5000,
+        values: [1500, 3000],
+        slide: function(evt, elem) {
+            $("#sl3Val1").text(elem.values[0]);
+            $("#sl3Val2").text(elem.values[1]);
+        }
+    });
+    $("#sl3Val1").text($("#sliderCtrl3").slider("values", 0));
+    $("#sl3Val2").text($("#sliderCtrl3").slider("values", 1));
+```
+
 - **Selectmenu:**
 ![Alt text](./selectmenu.png)
 ![Alt text](./selectmenu-1.png)
+
 ```javascript
-$("#selmenu1").selectmenu();
+  $("#selmenu1").selectmenu();
 
-$("#selmenu2").selectmenu();
+  $("#selmenu2").selectmenu();
 
-$("#selmenu3").selectmenu({
-    icons: { button: "ui-icon-lightbulb" }
-}).selectmenu("menuWidget")
-  .addClass("fixedHeight"); //下拉菜单一定高度，可以scroll
-  
-//HTML  
-<h3>Selectmenu with groups</h3>
-<div>
-   <label>Select a country:</label>
-   <select id="selmenu2">
-       <optgroup label="North America">
-           <option>Canada</option>
-           <option>Mexico</option>
-           <option>United States</option>
-       </optgroup>
-       <optgroup label="South America">
-           <option>Brazil</option>
-           <option>Argentina</option>
-           <option>Chile</option>
-       </optgroup>
-   </select>
-</div>
+  $("#selmenu3").selectmenu({
+      icons: { button: "ui-icon-lightbulb" }
+  }).selectmenu("menuWidget")
+    .addClass("fixedHeight"); //下拉菜单一定高度，可以scroll
+    
+  //HTML  
+  <h3>Selectmenu with groups</h3>
+  <div>
+     <label>Select a country:</label>
+     <select id="selmenu2">
+         <optgroup label="North America">
+             <option>Canada</option>
+             <option>Mexico</option>
+             <option>United States</option>
+         </optgroup>
+         <optgroup label="South America">
+             <option>Brazil</option>
+             <option>Argentina</option>
+             <option>Chile</option>
+         </optgroup>
+     </select>
+  </div>
 ```
+
 - **Accordion**
 ![Alt text](./Accordion.png)
+
 ```
- $("document").ready(function() {
-   // build a basic accordion control
-   $("#accordionCtrl").accordion();
-   
-   // allow all sections to collapse. By default, the Accordion always keeps at least
-   // one section open. You can override this behavior to enable all the sections to be closed
-   // also set an option to toggle the headers by a hover event
-   $("#accordionCtrl").accordion( {
-       collapsible: true,
-       event: "click mouseover"
-   }); //mouseover 代替 click 就可打开新的，关闭旧的
-   
-   // customize the icons
-   $("#accordionCtrl").accordion({
-       icons: {
-           header: "ui-icon-circle-triangle-e",
-           activeHeader: "ui-icon-circle-triangle-s"
-       }
-   });
-});
+     $("document").ready(function() {
+       // build a basic accordion control
+       $("#accordionCtrl").accordion();
+       
+       // allow all sections to collapse. By default, the Accordion always keeps at least
+       // one section open. You can override this behavior to enable all the sections to be closed
+       // also set an option to toggle the headers by a hover event
+       $("#accordionCtrl").accordion( {
+           collapsible: true,
+           event: "click mouseover"
+       }); //mouseover 代替 click 就可打开新的，关闭旧的
+       
+       // customize the icons
+       $("#accordionCtrl").accordion({
+           icons: {
+               header: "ui-icon-circle-triangle-e",
+               activeHeader: "ui-icon-circle-triangle-s"
+           }
+       });
+    });
 ```
+
 - **Progress Bar: .progressbar**
 ![Alt text](./progressBar.png)
+
 ```
     // instantiate a basic spinner control
     $("#progress1").progressbar({
@@ -158,6 +166,7 @@ progress3 .ui-progressbar-value {
     background-color: green;
 }
 ```
+
 - **Autocomplete:**
 ![Alt text](./autocomplete.png)
 
@@ -215,6 +224,7 @@ progress3 .ui-progressbar-value {
 ![Alt text](./dialog2.png)
 ![Alt text](./dialog3.png)
 
+
 ```
         $("#dialog1").dialog();
         $("#openDlg1").click(function() {
@@ -264,16 +274,17 @@ progress3 .ui-progressbar-value {
         });
 
 
-<div id="dialog1" title="Dialog Title">
-    <p>This is the dialog content</p>
-</div>
-<div id="dialog2" title="Dialog with buttons">
-    <p>This dialog has button controls</p>
-</div>
-<div id="dialog3" title="Dialog with options">
-    <p>This dialog has some different options set</p>
-</div>
+  <div id="dialog1" title="Dialog Title">
+      <p>This is the dialog content</p>
+  </div>
+  <div id="dialog2" title="Dialog with buttons">
+      <p>This dialog has button controls</p>
+  </div>
+  <div id="dialog3" title="Dialog with options">
+      <p>This dialog has some different options set</p>
+  </div>
 ```
+
 
 **Datepicker:** //datepicker还有很多功能此处未包含
 ![Alt text](./Datepicker.png)
@@ -343,6 +354,7 @@ progress3 .ui-progressbar-value {
 
 - **Resize:**
 drag 拉大拉小
+
 ```
  // basic resizing feature
  $("#theDiv").resizable();
@@ -417,58 +429,60 @@ drag 拉大拉小
 ![Alt text](./colorani.png)
 ![Alt text](./colorani2.png)
 <p>The properties that can have their colors animated are: <code>backgroundColor</code>, <code>borderBottomColor</code>, <code>borderLeftColor</code>, <code>borderRightColor</code>, <code>borderTopColor</code>, <code>color</code>, <code>columnRuleColor</code>, <code>outlineColor</code>, <code>textDecorationColor</code>, <code>textEmphasisColor</code></p>
-```
-$("#anim1").click(function(evt) {
-    $("#theDiv").animate({
-        backgroundColor: "red",
-        color: "white",
-        borderColor: "blue"
-    }, 800);
-});
 
-$("#anim2").click(function(evt) {
-    $("#theDiv").animate({
-        backgroundColor: "#b3c8d0",
-        color: "#000",
-        borderColor: "#a9a9a9"
-    }, 800);
-});
+```
+  $("#anim1").click(function(evt) {
+      $("#theDiv").animate({
+          backgroundColor: "red",
+          color: "white",
+          borderColor: "blue"
+      }, 800);
+  });
+
+  $("#anim2").click(function(evt) {
+      $("#theDiv").animate({
+          backgroundColor: "#b3c8d0",
+          color: "#000",
+          borderColor: "#a9a9a9"
+      }, 800);
+  });
 ```
 
 
 Show/Hide:
 各种效果：blind,  bounce,  explode,  highlight, puff .....
+
 ```
-$("#show1").click(function(evt) {
-    $("#theDiv").show("blind", 500);
-});
-$("#hide1").click(function(evt) {
-    $("#theDiv").hide("blind", 500);
-});
-$("#show2").click(function(evt) {
-    $("#theDiv").show("bounce", 500);
-});
-$("#hide2").click(function(evt) {
-    $("#theDiv").hide("bounce", 500);
-});
-$("#show3").click(function(evt) {
-    $("#theDiv").show("explode", 500);
-});
-$("#hide3").click(function(evt) {
-    $("#theDiv").hide("explode", 500);
-});
-$("#show4").click(function(evt) {
-    $("#theDiv").show("highlight", 500);
-});
-$("#hide4").click(function(evt) {
-    $("#theDiv").hide("highlight", 500);
-});
-$("#show5").click(function(evt) {
-    $("#theDiv").show("puff", 500);
-});
-$("#hide5").click(function(evt) {
-    $("#theDiv").hide("puff", 500);
-});
+  $("#show1").click(function(evt) {
+      $("#theDiv").show("blind", 500);
+  });
+  $("#hide1").click(function(evt) {
+      $("#theDiv").hide("blind", 500);
+  });
+  $("#show2").click(function(evt) {
+      $("#theDiv").show("bounce", 500);
+  });
+  $("#hide2").click(function(evt) {
+      $("#theDiv").hide("bounce", 500);
+  });
+  $("#show3").click(function(evt) {
+      $("#theDiv").show("explode", 500);
+  });
+  $("#hide3").click(function(evt) {
+      $("#theDiv").hide("explode", 500);
+  });
+  $("#show4").click(function(evt) {
+      $("#theDiv").show("highlight", 500);
+  });
+  $("#hide4").click(function(evt) {
+      $("#theDiv").hide("highlight", 500);
+  });
+  $("#show5").click(function(evt) {
+      $("#theDiv").show("puff", 500);
+  });
+  $("#hide5").click(function(evt) {
+      $("#theDiv").hide("puff", 500);
+  });
 ```
 
 
