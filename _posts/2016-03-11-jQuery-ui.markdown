@@ -7,7 +7,7 @@ categories: front_end
 ####JQueryUI
 
 jQueryUI can custom features you need，then download related js and css files.
-**Spinner:**
+- **Spinner:**
 ![Alt text](./spinner.png)
 
 ```
@@ -30,7 +30,7 @@ jQueryUI can custom features you need，then download related js and css files.
   $("#spinCtrl2").spinner("value", 50);
    
 ```
-**Slider:**
+- **Slider:**
 ![Alt text](./slider.png)
 ```
 $("#sliderCtrl1").slider({
@@ -66,7 +66,7 @@ $("#sliderCtrl3").slider({
 $("#sl3Val1").text($("#sliderCtrl3").slider("values", 0));
 $("#sl3Val2").text($("#sliderCtrl3").slider("values", 1));
 ```
-**Selectmenu:**
+- **Selectmenu:**
 ![Alt text](./selectmenu.png)
 ![Alt text](./selectmenu-1.png)
 ```javascript
@@ -97,7 +97,7 @@ $("#selmenu3").selectmenu({
    </select>
 </div>
 ```
-**Accordion**
+- **Accordion**
 ![Alt text](./Accordion.png)
 ```
  $("document").ready(function() {
@@ -121,7 +121,7 @@ $("#selmenu3").selectmenu({
    });
 });
 ```
-**Progress Bar: .progressbar**
+- **Progress Bar: .progressbar**
 ![Alt text](./progressBar.png)
 ```
     // instantiate a basic spinner control
@@ -158,7 +158,7 @@ progress3 .ui-progressbar-value {
     background-color: green;
 }
 ```
-**Autocomplete:**
+- **Autocomplete:**
 ![Alt text](./autocomplete.png)
 
 ```javascript
@@ -309,7 +309,7 @@ progress3 .ui-progressbar-value {
    }
 ```
 
-**Tabs:**
+- **Tabs:**
 
 ```javascript
    $("#tabsCtrl").tabs({
@@ -341,7 +341,7 @@ progress3 .ui-progressbar-value {
   
 ```
 
-**Resize:**
+- **Resize:**
 drag 拉大拉小
 ```
  // basic resizing feature
@@ -379,7 +379,7 @@ drag 拉大拉小
  });
 ```
 
-**Drag and Drop:**
+- **Drag and Drop:**
 
 ```
         $("#theDiv").draggable();
@@ -413,7 +413,7 @@ drag 拉大拉小
         });
 ```
 
-Color Animation:
+- Color Animation:
 ![Alt text](./colorani.png)
 ![Alt text](./colorani2.png)
 <p>The properties that can have their colors animated are: <code>backgroundColor</code>, <code>borderBottomColor</code>, <code>borderLeftColor</code>, <code>borderRightColor</code>, <code>borderTopColor</code>, <code>color</code>, <code>columnRuleColor</code>, <code>outlineColor</code>, <code>textDecorationColor</code>, <code>textEmphasisColor</code></p>
