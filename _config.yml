@@ -1,1 +1,4 @@
-highlighter: rouge
+gems: [jekyll-paginate, jekyll-gist]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
