@@ -6,6 +6,7 @@ categories: front_end
 ---
 
 >Extract from markdownPreview plugin cheatsheet of sublime
+>[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 #### **Text basics**
 
@@ -71,7 +72,7 @@ ____
 ____
 
 
-#### **Indentation**
+#### **Blockquotes**
 
 ```
 > Here is some indented text
