@@ -4,7 +4,7 @@ title:  "Object Oriented Programming (OOP)"
 date:   2015-09-07 
 categories: javascript
 ---
-[Extrct form JavaScriptissexy](http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/)
+[Extract form JavaScriptissexy](http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/)
 
 **Object Oriented Programming (OOP)** refers to using self-contained pieces of code to develop applications. We call these self-contained pieces of code objects, better known as Classes in most OOP programming languages and Functions in JavaScript.
 Building applications with objects allows us to adopt some valuable techniques, namely, **Inheritance** (objects can inherit features from other objects), **Polymorphism** (objects can share the same interface—how they are accessed and used—while their underlying implementation of the interface may differ), and **Encapsulation** (each object is responsible for specific tasks).

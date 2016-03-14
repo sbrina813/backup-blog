@@ -6,7 +6,8 @@ categories: javascript
 ---
 Extract from the book of Pro AngularJS---Adam Freeman
 
-####Round-Trip App vs Single Page App
+#### Round-Trip App vs Single Page App
+
 **Round-trip App**:The browser requests an initial HTML document from the server. User interactions-such as clicking a link or submitting a form-led the browser to request and receive a completely new HTML document. In this kind of application, the browser is essentially a rending engine for HTML content, and all of the applicaation logic and data resides on the server. The browser makes a series of stateless HTTP requests that the server handles by generating HTML documents danamically.
 
 **Serious drawbacks to round-trip apps** : They make the user wait while the next HTML document is requested and roaded, they require a large server-side infrastructure to process all of the requests and manage all of the application state, and they require a lot of bandwidth because each HTML document has to be self-contained(a lot of same content-like header, footer- being included in each response from the server)

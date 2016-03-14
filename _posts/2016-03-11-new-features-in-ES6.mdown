@@ -4,4 +4,6 @@ title:  "New features in ES6"
 date:   2016-03-11
 categories: javascript
 ---
-####
+
+#### New features in ES6
+
